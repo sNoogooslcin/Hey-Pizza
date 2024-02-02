@@ -1,0 +1,28 @@
+.container {
+    max-width: 1220px;
+    margin: auto;
+}
+.header {
+    background-image: linear-gradient(190deg, rgba(#000, .8) 0%, rgba(#000, .5) 15%, transparent 100%), url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    height: 100vh;
+    //padding: 3rem 15rem;
+    padding: 3rem 8rem;
+
+    @include respond($bp-smallest) {
+        padding: 3rem 5rem;
+    }
+    @include respond($bp-last) {
+        padding: 3rem 3rem;
+    }
+}
+
+section {
+    padding: 8rem 0;
+
+    @include respond($bp-small) {
+        padding: 5rem 0;
+    }
+}

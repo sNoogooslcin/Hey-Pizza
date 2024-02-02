@@ -1,0 +1,44 @@
+.btn,
+.btn:visited {
+    text-decoration: none;
+}
+
+.btn-navigation {
+    color: $color-primary;
+    padding: .8rem 2rem;
+    border: 2px solid $color-primary;
+}
+
+.btn-primary {
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-top: 10px;
+    display: inline;
+    padding-right: 10px;
+    @include text-gradient;
+    transition: all .4s;
+    animation: toTop .5s ease-out 3.1s backwards;
+
+    &::after {
+        content: "";
+        display: table;
+        height: 2px;
+        border-radius: 5rem;
+        width: 100%;
+        background: linear-gradient(to right, $gradient-1, $gradient-2);
+        transition: all .3s;
+        transform-origin: right;
+    }
+    
+    &:hover {
+        transform: translateX(5px);
+        
+        &::after {
+            transform: scale(0);
+        }
+    }
+
+    &:active {
+        transform: translateX(10px);
+    }
+}

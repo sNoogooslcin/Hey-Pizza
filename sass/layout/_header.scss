@@ -1,0 +1,38 @@
+.header {
+    &__text {
+        display: flex;
+        flex-direction: column;
+        height: 85%;
+        justify-content: center;
+        align-items: flex-start;
+        color: #fff;
+        line-height: 1.4;
+    }
+
+    &-1 {
+        font-size: 6rem;
+
+        &-animate-1 {
+            animation: toLeft .5s ease-out .3s backwards;
+        }
+        &-animate-2 {
+            animation: toLeft .5s ease-out .8s backwards;
+        }
+    }
+
+    &-2 {
+        font-size: 5.5rem;
+        animation: toLeft .8s ease-out 1.3s backwards;
+    }
+
+    &-3 {
+        font-size: 4.5rem;
+        animation: toLeft 1s ease-out 2.1s backwards;
+    }
+
+    &__arrow {
+        display: inline-block;
+        animation: arrowBounce 2s infinite;
+        @include text-gradient;
+    }
+}

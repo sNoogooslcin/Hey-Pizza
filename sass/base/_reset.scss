@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    
+    @include respond($bp-largest) {
+        font-size: 50%;
+    }
+    @include respond($bp-last) {
+        font-size: 43.75%;
+    }
+}

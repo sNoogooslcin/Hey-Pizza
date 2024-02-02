@@ -1,0 +1,17 @@
+@mixin text-gradient {
+    background: linear-gradient(to right, $gradient-1, $gradient-2);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin gradient {
+    background: linear-gradient(to right, $gradient-1, $gradient-2);
+}
+
+@mixin dark-gradient {
+    background: linear-gradient(to bottom right, #232323, #0c0c0c);
+}
+
+@mixin respond($breakpoint) {
+    @media only screen and (max-width: $breakpoint) { @content };
+}

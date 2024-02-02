@@ -1,0 +1,25 @@
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $grey-dark-2;
+}
+
+.heading-primary {
+    font-size: 4rem;
+    font-weight: 400;
+    color: $color-primary;
+    margin-bottom: 4rem;
+    text-transform: capitalize;
+    text-align: center;
+
+    &::after {
+        content: "";
+        display: table;
+        height: 2.5px;
+        width: 30px;
+        background: $color-primary;
+        margin: auto;
+        margin-top: 2rem;
+    }
+}

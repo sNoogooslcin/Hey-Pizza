@@ -1,0 +1,51 @@
+.sign-up {
+    background:linear-gradient(rgba($grey-dark-1, .3), rgba($grey-dark-1, .3)), url(../img/contact.jpg);
+    background-size: cover;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    &__text {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #fff;
+    }
+
+    .form {
+        &__email {
+            font-size: 1.6rem;
+            font-family: inherit;
+            padding: .8rem 1.5rem;
+            width: 30%;
+            background-color: #fff;
+            border: none;
+            border-radius: 2px;
+            transition: all .3s;
+
+            @include respond($bp-smallest) {
+                width: 50%;
+            }
+
+            &:focus:invalid {
+                border-bottom: 3px solid #ff7730;
+            }
+
+            &:focus {
+                outline: none;
+                border-bottom: 3px solid #55c57a;
+                box-shadow: 0 1rem 2rem rgba($color: #fff, $alpha: .1);
+            }
+        }
+
+        &__submit {
+            cursor: pointer;
+            font-family: inherit;
+            padding: .8rem 1.5rem;
+            font-size: 1.6rem;
+            background: $color-primary;
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+        }
+    }
+}

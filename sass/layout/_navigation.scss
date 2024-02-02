@@ -1,0 +1,103 @@
+.logo {
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: $font-logo;
+    color: $color-logo-primary;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: .8;
+    text-shadow: 1px 1px $color-logo-shadow;
+
+    span {
+        color: $color-logo-secondary;
+    }
+}
+
+.navigation {
+    display: flex;
+    line-height: 1.3;
+
+    @include respond($bp-small) {
+        padding-top: 3rem;
+    }
+
+    &__list {
+        list-style: none;
+        font-size: 2.1rem;
+        margin-left: auto;
+        display: flex;
+        gap: 1.5rem;
+
+        @include respond($bp-small) {
+            display: none;
+        }
+    }
+
+    &__link,
+    &__link:visited {
+        text-decoration: none;
+        color: $color-primary;
+        padding: .8rem 2rem;
+    }
+
+    &__items::after {
+        content: "";
+        display: table;
+        height: 1.5px;
+        width: 100%;
+        background: linear-gradient(to right, $gradient-1, $gradient-2);
+        transform: scale(0);
+        transition: all .3s;
+    }
+
+    &__items:hover::after {
+        transform: scale(1);
+    }
+
+    &__items:hover {
+        @include text-gradient;
+        transform: skewX(-5deg) skewY(-3deg);
+    }
+
+    &__mini {
+        content: "";
+        display: table;
+        height: 2px;
+        width: 4rem;
+        background-color: $color-primary;
+        position: relative;
+        margin: .8rem 2rem;
+        display: none;
+        margin-left: auto;
+
+        &-box {
+            margin-left: auto;
+            cursor: pointer;
+            display: none;
+
+            @include respond($bp-small) {
+                display: block;
+            }
+        }
+
+        @include respond($bp-small) {
+            display: block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: table;
+            height: 3px;
+            width: 4rem;
+            background-color: $color-primary;
+            position: absolute;
+        }
+        &::before {
+            top: -10px;
+        }
+        &::after {
+            top: 10px;
+        }
+    }
+}

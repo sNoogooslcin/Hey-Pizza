@@ -1,0 +1,195 @@
+.favourite-meals {
+    max-width: 1140px;
+    margin: auto;
+    //display: grid;
+    //grid-template-columns: repeat(3, auto);
+    //grid-column-gap: 3rem;
+
+    display: flex;
+    gap: 3rem;
+    
+    @include respond($bp-small) {
+        //grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        flex-direction: column;
+        width: 50%;
+    }
+    @include respond($bp-last) {
+        width: 80%;
+    }
+
+    .card {
+        width: 100%;
+        height: 45rem;
+        perspective: 150rem;
+        position: relative;
+
+        @include respond($bp-largest) {
+            height: auto;
+        }
+        &__side {
+            height: 45rem;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            transition: all .8s ease;
+            box-shadow: 0 1rem 1.5rem rgba($color: $grey-dark-1, $alpha: .3);
+            border-radius: 2px;
+            overflow: hidden;
+
+            @include respond($bp-largest) {
+                height: auto;
+                position: relative;
+                border-radius: 0;
+            }
+
+            &-front {
+                background: #fff;
+            }
+
+            &-back {
+                transform: rotateY(180deg);
+                @include dark-gradient;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                @include respond($bp-largest) {
+                    transform: rotate(0);
+                    background: $grey-light-1;
+                    color: $grey-dark-1;
+                    padding: 1.5rem;
+                }
+            }
+        }
+        &:hover .card__side-front {
+                transform: rotateY(-180deg);
+
+                @include respond($bp-largest) {
+                    transform: rotate(0);
+                }
+            }
+        &:hover .card__side-back {
+                transform: rotateY(0);
+            }
+
+        &__img {
+            height: 30rem;
+            background-size: cover;
+            background-position: center;
+            
+            &-1 {
+                background-image: url(../img/img-7.jpg);
+            }
+            &-2 {
+                background-image: url(../img/img-8.jpg);
+            }
+            &-3 {
+                background-image: url(../img/img-9.jpg);
+            }
+        }
+
+        &__heading {
+            font-size: 2rem;
+            color: $grey-dark-1;
+            text-align: center;
+            background: #1a1a1a;
+            margin: 0 20%;
+            clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
+            transform: translateY(-1.64rem);
+
+            &-text {
+                @include text-gradient;
+            }
+        }
+
+        &__tandr {
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            margin-top: -.5rem;
+            margin-bottom: 1.5rem;
+
+            &-time {
+                color: $grey-dark-1;
+                font-weight: 800;
+                font-size: 1.5rem;
+            }
+
+            &-icon {
+                height: 2rem;
+                width: 2rem;
+                fill: url(#gradient);
+            }
+
+            &-icon-clock {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+
+            &-ratings {
+                margin-left: auto;
+            }
+        }
+        
+        &__details {
+            width: 85%;
+            margin: auto;
+            text-align: center;
+        }
+
+        &__detail {
+            font-size: 1.5rem;
+            padding: .3rem;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $grey-dark-3;
+            }
+        }
+
+        &__only {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+
+            @include respond($bp-largest) {
+                display: none;
+            }
+        }
+
+        &__price {
+            font-size: 3rem;
+        }
+
+        &__btn {
+            text-decoration: none;
+            font-size: 1.8rem;
+            padding: 1rem 2rem;
+            @include text-gradient;
+            transition: all .3s;
+
+            &:hover {
+                word-spacing: .5rem;
+            }
+
+            &:active {
+                word-spacing: normal;
+            }
+
+            &::after {
+                content: "";
+                display: table;
+                height: 1.5px;
+                width: 100%;
+                transition: all .3s;
+                @include gradient;
+                transform: scale(1);
+                transform-origin: right;
+            }
+
+            &:hover::after {
+                transform: scale(0);
+            }
+        }
+    }
+}

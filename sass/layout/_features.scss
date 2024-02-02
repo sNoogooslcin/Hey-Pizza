@@ -1,0 +1,39 @@
+.features {
+    &-heading {
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+    
+    &-text {
+        font-size: 2rem;
+        max-width: 1140px;
+        margin: auto;
+        padding: 0 2rem;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+
+    &__box {
+        padding: 3rem;
+        text-align: center;
+
+        &-icon {
+            height: 7.5rem;
+            width: 7.5rem;
+            fill: url(#gradient);
+            margin-bottom: .5rem;
+        }
+
+        &-title {
+            font-size: 1.8rem;
+            margin-bottom: .5rem;
+        }
+
+        &-text {
+            font-size: 1.5rem;
+        }
+    }
+}
